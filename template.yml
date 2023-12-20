@@ -42,9 +42,9 @@ Resources:
     Properties:
       Handler: com.poja.sqlite.ApiEventHandler::handleRequest
       MemorySize: 512
-      Role: !Sub '{{resolve:ssm:/poja-sqlite/${Env}/execution/role-arn}}'
+      Role: !Sub '{{resolve:ssm:/pojaSqlite/${Env}/execution/role-arn}}'
       FileSystemConfigs:
-        - Arn: !Sub '{{resolve:ssm:/poja-sqlite/${Env}/efs/access-point/arn}}'
+        - Arn: !Sub '{{resolve:ssm:/pojaSqlite/${Env}/efs/access-point/arn}}'
           LocalMountPath: /mnt/efs
       Events:
         ApiCall:
